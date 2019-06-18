@@ -6,7 +6,7 @@
     <input class="" placeholder="搜索公交路线、车站、地点" ></input>
   </view>
 </view>
-
+<button class="show" bintap="Switch_show">显示</button>
 <scroll-view class="whole" scroll-top="{{scrollTop}}" >
   <view class="block" wx:for="{{bus}}">
   <text >{{item.bus_number}}</text>
