@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/index/index",
     "pages/search/search",
     "pages/logs/logs"
@@ -25,13 +26,13 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "路线",
+        "text": "扩展",
         "iconPath": "image/wechat.png",
         "selectedIconPath": "image/wechatHL.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "推荐",
+        "text": "我的",
         "iconPath": "image/wechat.png",
         "selectedIconPath": "image/wechatHL.png"
       }

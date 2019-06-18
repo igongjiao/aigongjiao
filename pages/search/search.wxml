@@ -2,7 +2,7 @@
 <view class="top" >
   <view class="search" bindtap="Search">
       <icon class="search_icon" size="10" type="search"></icon>
-      <input class="" placeholder="搜索公交路线、车站、地点" ></input>
+      <input class="" placeholder="搜索公交路线、车站、地点" bindinput="get_search" ></input>
   </view>
   <button class="search_bt" bindtap="Routine">查询</button>
 </view>

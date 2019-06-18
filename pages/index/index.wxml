@@ -6,13 +6,14 @@
     <input class="" placeholder="搜索公交路线、车站、地点" ></input>
   </view>
 </view>
-<button class="show" bintap="Switch_show">显示</button>
-<scroll-view class="whole" scroll-top="{{scrollTop}}" >
-  <view class="block" wx:for="{{bus}}">
-  <text >{{item.bus_number}}</text>
-    <text>{{item.destination}}</text>
-      <text>{{item.station}}</text>
-        <text>{{item.accuracy}}</text>
-          <text>{{item.wait_time}}</text>
-   </view>
-</scroll-view>
+
+  <button class="{{show==true?'show':'hide'}}" bindtap="Switch_show">隐藏</button>
+  <scroll-view scroll-y="true" class="whole"  scroll-top="{{scrollTop}}" >
+    <view class="{{show==true?'block_show':'block_hide'}}" wx:for="{{bus}}">
+    <text >{{item.bus_number}}</text>
+      <text>{{item.destination}}</text>
+        <text>{{item.station}}</text>
+          <text>{{item.accuracy}}</text>
+            <text>{{item.wait_time}}</text>
+    </view>  
+  </scroll-view>
