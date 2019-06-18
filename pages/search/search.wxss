@@ -1,0 +1,67 @@
+/* pages/search/search.wxss */
+.top{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin:10rpx 0 30rpx 0;
+}
+.search{
+  width: 80%;
+  height: 32px;
+  display: flex;
+  margin-left: 5%;  
+  border: 1px solid white;
+  border-radius: 50rpx;
+  background-color:  rgb(241, 241,243);
+}
+
+.search .search_icon{
+    margin: 20rpx;
+}
+
+.search input{
+  display: inline-block;
+  margin-right: 10px;
+  width: 80%;
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+.search_bt{
+  height: 32px;
+  width: 15%;
+  margin-left: 10px;
+  font-size: 24rpx;
+  background-color: rgb(27, 96, 141);
+  color:rgb(78, 180, 167);
+  border: 1px solid white;
+  border-radius: 50rpx;
+}
+/*  */
+.middle{
+  
+}
+
+.middle .text{
+  height: 80rpx;
+  width: 100%;
+  padding:30rpx 0 0 30rpx;
+  vertical-align: middle;
+  background-color: rgb(250,250,250);
+  font-size:30rpx;
+  color:rgb(210,210,210);
+}
+
+.middle .place{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1px solid rgb(241, 241,243);
+  padding-left: 20rpx;
+}
+.middle #name{
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  font-family:  Microsoft YaHei ;
+}

@@ -1,0 +1,41 @@
+/**index.wxss**/
+
+
+.top{
+  height: 220rpx;
+  width: 100%;
+  top:0;
+  background-color: white
+}
+
+.top .search{
+  width: 90%;
+  display: flex;
+  margin-left: 5%;  
+  border: 1px solid white;
+  background-color:  rgb(241, 241,243);
+}
+
+.top .search .search_icon{
+    margin: 20rpx;
+}
+
+.top .search input{
+  width: 100%;
+  font-size: 30rpx;
+  vertical-align: middle
+}
+
+/*  */
+.whole{
+  width: 100%;
+}
+
+.block{
+  height: 150rpx;
+  margin: 10rpx;
+  background-color:blue;
+  border: 1px solid white;
+}
+
+
