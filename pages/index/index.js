@@ -1,7 +1,16 @@
 //index.js
+
+// // 引入SDK核心类
+let QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
+
+// 实例化API核心类
+let qqmapsdk = new QQMapWX({
+  key: 'I7OBZ-MZACP-B4PDK-VHGRK-H3THE-ZTBHC'
+});
+
 //获取应用实例
 var app = getApp()
-
+app.globalData.qqmapsdk = qqmapsdk;
 Page({
   data: {
     city:"武汉",
@@ -34,9 +43,29 @@ Page({
     place:'',
     scrollTop:0,
   },
-  //页面加载函数
-  onLoad:function(options){
+
+  /**
+* 生命周期函数--监听页面加载   获取用户当前位置
+*/
+  onLoad: function (options) {
+    let _page = this;
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {
+        _page.setData({
+          latitude: res.latitude,
+          longitude: res.longitude,
+          scale: 10
+        });
+        wx.setStorageSync('userlatlng', {
+          lat: res.latitude,
+          lng: res.longitude
+        });
+        console.log(res);
+      }
+    })
   },
+
 
   //事件处理函数
   bindViewTap: function() {
