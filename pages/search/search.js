@@ -22,12 +22,9 @@ Page({
     wx.switchTab({
       url: '../index/index',
     })
-<<<<<<< HEAD
   },
   //起点输入框绑定的函数
   getStart(e){
     console.log("CPY!!");
-=======
->>>>>>> parent of a1e935a... 6/18
   }
 })
