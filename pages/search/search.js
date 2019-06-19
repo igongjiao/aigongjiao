@@ -22,5 +22,9 @@ Page({
     wx.switchTab({
       url: '../index/index',
     })
+  },
+  //起点输入框绑定的函数
+  getStart(e){
+
   }
 })
