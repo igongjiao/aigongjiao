@@ -25,6 +25,6 @@ Page({
   },
   //起点输入框绑定的函数
   getStart(e){
-
+    cons.log("inputStart");
   }
 })
