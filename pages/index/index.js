@@ -42,6 +42,8 @@ Page({
     show:false,
     place:'',
     scrollTop:0,
+    latitude:0,
+    longitude:0,
   },
 
   /**
@@ -49,6 +51,7 @@ Page({
 */
   onLoad: function (options) {
     let _page = this;
+    //获取用户坐标经纬度
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度
       success: function (res) {
@@ -62,8 +65,29 @@ Page({
           lng: res.longitude
         });
         console.log(res);
+
+        //获取用户位置信息
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (res) {
+            console.log("Success");
+            console.log(res);
+          },
+          fail: function (res) {
+            console.log("fail");
+            console.log(res);
+          },
+          complete: function (res) {
+            console.log("complete");
+            console.log(res);
+          }
+        })
       }
     })
+    
   },
 
 
