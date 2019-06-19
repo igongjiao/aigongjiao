@@ -23,49 +23,9 @@ Page({
       url: '../index/index',
     })
   },
-
-  //加载页面时把定位存进数据TODO
-  onLoad: function (options) {
-    let _page = this;
-    wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-      success: function (res) {
-        _page.setData({
-          latitude: res.latitude,
-          longitude: res.longitude,
-          scale: 10
-        });
-      },
-      fail: function (error) {
-        console.error("loca"+error);
-      },
-      complete: function (res){
-        console.log("locaC" +res);
-      }
-    })
-    console.log(this.data.latitude + "     " + this.data.longitude);
-    // qqmapsdk.reverseGeocoder({
-    //   location: {
-    //     latitude: this.data.latitude,
-    //     longitude: this.data.longitude
-    //   },
-    //   success: function (res) {
-    //     console.log(res);
-    //   }, 
-    //   fail: function (error) {
-    //     console.error(error);
-    //   },
-    //   complete: function (res) {
-    //     console.log(res);
-    //   }
-    // })
-  },
-
-  //起点输入框绑定的函数TODO
+  //起点输入框绑定的函数
   getStart(e){
-    let inputStr = e.detail.value;
-    console.log("输入内容： "+inputStr);
+    console.log("CPY!!");
+    cons.log("inputStart");
   }
-
-
 })
