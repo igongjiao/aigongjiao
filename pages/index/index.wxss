@@ -31,29 +31,49 @@
   margin-top: 300rpx;
   font-family: MicroSoft Yahei;
   font-size:24rpx;
+  background-color: white;
 }
+
 .hide{
   position: absolute;
   bottom:0;
   font-family: MicroSoft Yahei;
   font-size:24rpx;
   width: 100%;
+  background-color: white;
+
 }
 
+.up_down{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
 
-.whole{
-  width: 100%;
+.whole_show{
+  padding: 0 5rpx 0 5rpx;
+  background-color: rgb(241, 241,243);
   height: 600rpx;
 }
-
+.whole_hide{
+  display: none;
+}
 
 .block_show{
   height: 150rpx;
   margin: 10rpx;
-  background-color:blue;
+  background-color: white;
   border: 1px solid white;
+  border-radius:3%;
 }
 
 .block_hide{
   display: none;
+}
+
+.collect{
+  height: 50rpx;
+  width: 50rpx;
+  position:absolute;
+  right: 50rpx;
 }
