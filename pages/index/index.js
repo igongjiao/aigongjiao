@@ -65,7 +65,7 @@ Page({
         _page.setData({
           latitude: res.latitude,
           longitude: res.longitude,
-          scale: 10
+          scale: 13
         });
         wx.setStorageSync('userlatlng', {
           lat: res.latitude,
@@ -81,6 +81,10 @@ Page({
           },
           success: function (res) {
             _page.setData({
+              province: res.result.address_component.province,
+              city: res.result.address_component.city,
+            });
+            wx.setStorageSync('searchRegion', {
               province: res.result.address_component.province,
               city: res.result.address_component.city,
             });

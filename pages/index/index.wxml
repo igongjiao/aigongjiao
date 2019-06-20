@@ -7,6 +7,9 @@
   </view>
 </view>
 
+<!--地图容器-->
+<map id="myMap" style="width: 100%; height: 300px;" longitude="{{longitude}}" latitude="{{latitude}}" scale='{{scale}}' polyline="{{polyline}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
+
   <button class="{{show==true?'show':'hide'}}" bindtap="Switch_show">隐藏</button>
   <scroll-view scroll-y="true" class="whole"  scroll-top="{{scrollTop}}" >
     <view class="{{show==true?'block_show':'block_hide'}}" wx:for="{{bus}}">
