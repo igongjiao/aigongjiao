@@ -14,6 +14,16 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function logError(str) {
+  wx.showToast({
+    title: str,
+    icon: 'loading',
+    duration: 2000//持续的时间
+  })
+  return;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  logError: logError
 }

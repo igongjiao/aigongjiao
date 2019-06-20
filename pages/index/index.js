@@ -1,5 +1,6 @@
 //index.js
-
+//引入工具类
+const util = require('../../utils/util.js')
 // // 引入SDK核心类
 let QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
 
@@ -47,10 +48,16 @@ Page({
     longitude:0,
     //地图放大倍数
     scale:16,
+    markerScale:17,
     //用户所在城市信息
     province:"湖北省",
     city:"武汉",
 
+    //地图中的图标
+    markers:[],
+    busicon: "../../image/busicon.png",
+    //缩放视野以包含所有给定的坐标点
+    includePoints: [],
   },
 
   /**
@@ -92,10 +99,67 @@ Page({
             //console.log(res.result.address_component.province);
           },
           fail: function (res) {
+            util.logError("位置名称获取失败");
           },
           complete: function (res) {
           }
         })
+
+        qqmapsdk.search({
+          keyword: '站',
+          page_size:14,
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          filter: encodeURI("category=公交车站"),
+          success: function (res) {
+            console.log(res);
+            var mks = [];
+            var includeP = [];
+            for(var i = 0; i < res.data.length;i++){
+              mks.push({
+                id:i,
+                //title: res.data[i].title,
+                label:{
+                  content: res.data[i].title.split("[")[0]+"站",
+                  color: "#424200",
+                  fontSize:12,
+                  borderWidth:0,
+                  x: -res.data[i].title.length-25,
+                  y: 0,
+                },
+                bus: res.data[i].address,
+                latitude: res.data[i].location.lat,
+                longitude: res.data[i].location.lng,
+                iconPath: _page.data.busicon,
+                alpha:0.7,
+                width:_page.data.markerScale,
+                height: _page.data.markerScale,
+              });
+              includeP.push({
+                latitude: res.data[i].location.lat,
+                longitude: res.data[i].location.lng,
+              });
+            }
+            //添加用户坐标到缩放适应数组
+            // includeP.push({
+            //   latitude: _page.data.latitude,
+            //   longitude: _page.data.longitude,
+            // })
+            _page.setData({
+              markers:mks,
+              scale: 18,
+              includePoints:includeP
+            })
+          },
+          fail: function (res) {
+            util.logError("车站信息获取失败");
+          }
+        })
+      },
+      fail:function(res){
+        util.logError("位置坐标获取失败");
       }
     })
     

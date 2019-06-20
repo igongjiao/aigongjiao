@@ -20,7 +20,6 @@ Page({
 
   //TODO
   get_search:function(e){
-    console.log(encodeURI("公交站"));
     //app.globalData.search_place = e.detail.value
     qqmapsdk.getSuggestion({
       keyword: e.detail.value,
