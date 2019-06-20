@@ -6,36 +6,42 @@
   margin:10rpx 0 30rpx 0;
 }
 .search{
-  width: 80%;
-  height: 32px;
+  width: 90%;
   display: flex;
-  margin-left: 5%;  
-  border: 1px solid white;
-  border-radius: 50rpx;
-  background-color:  rgb(241, 241,243);
+  margin: 0 auto;
+  background: #A3D0C3;
+  align-items: center;
 }
 
-.search .search_icon{
-    margin: 20rpx;
-}
+
 
 .search input{
-  display: inline-block;
-  margin-right: 10px;
-  width: 80%;
-  font-size: 30rpx;
+  height: 32px;
+  border: 2px solid #7BA7AB;
+  border-radius: 10rpx;
+  padding-left: 13px;
+  background: #F9F0DA;
+  color: #9E9C9C;
+  width: 100%;
+  /* font-size: 30rpx; */
+
+}
+.search icon{
+  height: 32px;
+  width: 42px;
+  outline: 0;
+  border:0;
+  background: #7BA7AB;
+  justify-content: center;
   vertical-align: middle;
 }
-.search_bt{
-  height: 32px;
-  width: 15%;
-  margin-left: 10px;
-  font-size: 24rpx;
-  background-color: rgb(27, 96, 141);
-  color:rgb(78, 180, 167);
-  border: 1px solid white;
-  border-radius: 50rpx;
+.search icon::before{
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
 }
+
+
 /*  */
 .middle{
   

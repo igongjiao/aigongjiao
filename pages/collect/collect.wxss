@@ -33,6 +33,25 @@
   color: #494949;
 }
 
-.movie-content-wrapper{
+.collect-content-wrapper{
   padding-top: 50px;
+  width: 100%;
+  background-color: rgb(241,241,243)
+}
+.content{
+  height: 100%;
+
+}
+.message{
+  height:200rpx;
+  margin: 20rpx 2% 20rpx 2%;
+  width: 96%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 3%;
+}
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
 }

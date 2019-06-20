@@ -2,7 +2,8 @@
 .userinfo{
   display: flex;
   flex-direction: row;
-  margin-top:50rpx;
+  margin:50rpx 0 30rpx 0;
+  
 }
 .userinfo-name{
   padding:20rpx 0 0 5%;

@@ -9,7 +9,27 @@ Page({
       "站点收藏",
       "路线收藏",
     ],
-    station:[{},{}]
+    station: [{ message: 1 }, { message: 2 }, { message: 3 }, { message: 4 }, { message: 5 }, { message: 6 },
+      { message: 1 }, { message: 2 }, { message: 3 }, { message: 4 }, { message: 5 }, { message: 6 },],
+    routine: [{ message: 1 }, { message: 2 }, { message: 3 }, { message: 4 }, { message: 5 }, { message: 6 },
+      { message: 1 }, { message: 2 }, { message: 3 }, { message: 4 }, { message: 5 }, { message: 6 },],
+    windowHeight: 0,
+    scrollViewHeight:0,
+  },
+  onLoad: function (option) {
+    var that = this
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          windowHeight:res.windowHeight
+        })
+      },
+    })
+      console.log(that.data.windowHeight)
+      let scrollViewHeight = this.data.windowHeight - 50
+      this.setData({
+        scrollViewHeight: scrollViewHeight
+      })
   },
 
   /**

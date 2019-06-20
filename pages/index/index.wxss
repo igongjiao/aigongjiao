@@ -14,6 +14,8 @@
   margin-left: 5%;  
   border: 1px solid white;
   background-color:  rgb(241, 241,243);
+  align-items: center;
+  font-family: FontAwesome;
 }
 
 .top .search .search_icon{
@@ -23,7 +25,6 @@
 .top .search input{
   width: 100%;
   font-size: 30rpx;
-  vertical-align: middle
 }
 /*  */
 
@@ -51,9 +52,8 @@
 }
 
 .whole_show{
-  padding: 0 5rpx 0 5rpx;
+  height: 100%;
   background-color: rgb(241, 241,243);
-  height: 600rpx;
 }
 .whole_hide{
   display: none;
@@ -76,4 +76,18 @@
   width: 50rpx;
   position:absolute;
   right: 50rpx;
+}
+
+.collect_hide{
+  display: none;
+  height: 50rpx;
+  width: 50rpx;
+  position:absolute;
+  right: 50rpx;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
 }
