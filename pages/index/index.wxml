@@ -7,6 +7,9 @@
   </view>
 </view>
 
+<!--地图容器-->
+<map id="myMap" style="width: 100%; height: 300px;" longitude="{{longitude}}" latitude="{{latitude}}" scale='{{scale}}' polyline="{{polyline}}" markers="{{markers}}" covers="{{covers}}" include-points="{{includePoints}}" show-location></map>
+
   <button class="{{show==true?'show':'hide'}}" bindtap="Switch_show"><image src="../../image/{{show==true?'down.png':'up.png'}}" class="up_down"></image></button>
   <scroll-view scroll-y="true" class="{{show==true?'whole_show':'whole_hide'}}"  scroll-top="{{scrollTop}}" >
     <view class="{{show==true?'block_show':'block_hide'}}" wx:for="{{bus}}" bindtap="Select_routine">
@@ -17,5 +20,5 @@
             <text>{{item.wait_time}}</text>
             <image class="{{item.collected==false?'collect':'collect_hide'}}" bindtap="Collect_routine" src="../../image/heart.png" data-index="{{index}}"  ></image>
             <image class="{{item.collected==false?'collect_hide':'collect'}}" bindtap="Collect_routine" src="../../image/selected_heart.png" data-index="{{index}}"  ></image>
-    </view>  
+    </view>   
   </scroll-view>
