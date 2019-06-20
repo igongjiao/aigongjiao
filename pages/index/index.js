@@ -42,8 +42,15 @@ Page({
     show:false,
     place:'',
     scrollTop:0,
+    //用户坐标
     latitude:0,
     longitude:0,
+    //地图放大倍数
+    scale:16,
+    //用户所在城市信息
+    province:"湖北省",
+    city:"武汉",
+
   },
 
   /**
@@ -64,7 +71,7 @@ Page({
           lat: res.latitude,
           lng: res.longitude
         });
-        console.log(res);
+        //console.log(res);
 
         //获取用户位置信息
         qqmapsdk.reverseGeocoder({
@@ -73,16 +80,16 @@ Page({
             longitude: res.longitude
           },
           success: function (res) {
-            console.log("Success");
-            console.log(res);
+            _page.setData({
+              province: res.result.address_component.province,
+              city: res.result.address_component.city,
+            });
+            //console.log("Success");
+            //console.log(res.result.address_component.province);
           },
           fail: function (res) {
-            console.log("fail");
-            console.log(res);
           },
           complete: function (res) {
-            console.log("complete");
-            console.log(res);
           }
         })
       }
